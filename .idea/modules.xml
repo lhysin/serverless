@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aws-java-maven/hello.iml" filepath="$PROJECT_DIR$/aws-java-maven/hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-function-aws/iw-aws-lambda-blog.iml" filepath="$PROJECT_DIR$/spring-cloud-function-aws/iw-aws-lambda-blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-function-aws-sample/spring-cloud-function-aws-sample.iml" filepath="$PROJECT_DIR$/spring-cloud-function-aws-sample/spring-cloud-function-aws-sample.iml" />
+    </modules>
+  </component>
+</project>

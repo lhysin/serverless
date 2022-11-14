@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="iw-aws-lambda-blog" />
+        <module name="spring-cloud-function-aws-sample" />
+        <module name="hello" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hello" target="1.8" />
+      <module name="iw-aws-lambda-blog" target="1.8" />
+      <module name="oracle-health-checker" target="17" />
+      <module name="spring-cloud-function-aws-sample" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="iw-aws-lambda-blog" options="-parameters" />
+      <module name="oracle-health-checker" options="-parameters" />
+      <module name="spring-cloud-function-aws-sample" options="-parameters" />
+    </option>
+  </component>
+</project>

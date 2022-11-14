@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://lhysin:Xharhdiddl!123@serverless.owa1ncs.mongodb.net/commerce?retryWrites=true&w=majority

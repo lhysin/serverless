@@ -1,0 +1,22 @@
+service: spring-cloud-function-aws-sample
+
+provider:
+  name: aws
+  runtime: java11
+  stage: dev
+  region: ap-northeast-2
+            
+# jar file that will be uploaded and executed on AWS
+package:
+  artifact: target/spring-cloud-function-aws-sample.jar
+
+#define Lambda function
+functions:
+  findAllCustomer:
+    handler: org.springframework.cloud.function.adapter.aws.SpringBootStreamHandler
+    events: # api gateway
+      - http:
+          path: v1/customers
+          method: get
+#    environment: # environment variables
+ #     FUNCTION_NAME: findAllCustomer
