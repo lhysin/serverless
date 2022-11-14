@@ -37,4 +37,7 @@ https://www.techmagic.co/blog/serverless-framework-vs-aws-sam/
 
 # java-aws-lambda-hibernate
 https://www.baeldung.com/java-aws-lambda-hibernate
+
+# aws-java-spring-cloud-function-demo
+https://www.serverless.com/examples/aws-java-spring-cloud-function-demo
 ```
