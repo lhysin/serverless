@@ -20,7 +20,7 @@ sls logs -f hello --tail
 
 sls remove
 
-# aws credentials
+# aws credentialsserverless invoke local --function
 sls config credentials \
   --provider aws \
   --key AKIAIOSFODNN7EXAMPLE \

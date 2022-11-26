@@ -22,7 +22,7 @@ frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: java8
+  runtime: java11
 
 # you can overwrite defaults here
 #  stage: dev
@@ -57,6 +57,10 @@ package:
 functions:
   hello:
     handler: com.serverless.Handler
+    events:
+      - http:
+          path: users/create
+          method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

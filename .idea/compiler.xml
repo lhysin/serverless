@@ -9,14 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="iw-aws-lambda-blog" />
         <module name="spring-cloud-function-aws-sample" />
-        <module name="hello" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hello" target="1.8" />
-      <module name="iw-aws-lambda-blog" target="1.8" />
       <module name="oracle-health-checker" target="17" />
-      <module name="spring-cloud-function-aws-sample" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -1,4 +1,4 @@
-package io.lhysin.sample;
+package io.lhysin.function;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
