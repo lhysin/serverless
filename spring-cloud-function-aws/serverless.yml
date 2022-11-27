@@ -12,19 +12,29 @@ package:
 
 #define Lambda function
 functions:
+  consumer:
+    handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
+    events: # api gateway
+      - http:
+          path: /v1/consumer
+          method: get
+    environment:
+      FUNCTION_NAME: consumer
+
   uppercase:
     handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
     events: # api gateway
       - http:
-          path: v1/uppercase
+          path: /v1/uppercase
           method: get
     environment:
       FUNCTION_NAME: uppercase
+
   randomString:
     handler:  org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
     events: # api gateway
       - http:
-          path: v1/randomString
+          path: /v1/randomString
           method: get
     environment:
       FUNCTION_NAME: randomString

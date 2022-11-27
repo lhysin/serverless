@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.cloud.function.context.test.FunctionalSpringBootTest;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 
@@ -13,6 +14,7 @@ import java.net.URI;
 @SpringBootTest(classes = SpringCloudFunctionAwsApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
+@FunctionalSpringBootTest
 class SpringCloudFunctionAwsApplicationTests {
 
     @Autowired
