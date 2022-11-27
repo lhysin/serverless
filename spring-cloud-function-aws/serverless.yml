@@ -1,4 +1,4 @@
-service: spring-cloud-function-aws-sample
+service: spring-cloud-function-aws
 
 provider:
   name: aws

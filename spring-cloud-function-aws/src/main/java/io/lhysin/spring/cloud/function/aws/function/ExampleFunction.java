@@ -18,6 +18,6 @@ public class ExampleFunction {
 
     @Bean
     public Supplier<String> randomString() {
-        return () -> UUID.randomUUID().toString();
+        return () -> "SUCESS RESPONSE : " + UUID.randomUUID().toString();
     }
 }
