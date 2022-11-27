@@ -1,0 +1,31 @@
+service: spring-cloud-function-aws-sample
+
+provider:
+  name: aws
+  runtime: java11
+  stage: dev
+  #region: ap-northeast-2
+            
+# jar file that will be uploaded and executed on AWS
+package:
+  artifact: build/distributions/spring-cloud-function-aws-1.0.0.RELEASE.zip
+
+#define Lambda function
+functions:
+  uppercase:
+    handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
+    events: # api gateway
+      - http:
+          path: v1/uppercase
+          method: get
+    environment:
+      FUNCTION_NAME: uppercase
+  randomString:
+    handler:  org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
+    events: # api gateway
+      - http:
+          path: v1/randomString
+          method: get
+    environment:
+      FUNCTION_NAME: randomString
+
