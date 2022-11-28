@@ -32,7 +32,5 @@ package:
   artifact: build/distributions/aws-lambda-by-oracle.zip
 
 functions:
-  hello:
-    handler: io.lhysin.aws.lambda.Handler
   oracle-health-checker:
-    handler: io.lhysin.aws.lambda.OracleHealthCheckHandler
+    handler: io.lhysin.aws.lambda.handler.OracleHealthCheckHandler

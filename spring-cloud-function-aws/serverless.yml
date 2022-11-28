@@ -19,7 +19,7 @@ functions:
           path: /v1/consumer
           method: get
     environment:
-      FUNCTION_NAME: consumer
+      SPRING_CLOUD_FUNCTION_DEFINITION: consumer
 
   uppercase:
     handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
@@ -28,7 +28,7 @@ functions:
           path: /v1/uppercase
           method: get
     environment:
-      FUNCTION_NAME: uppercase
+      SPRING_CLOUD_FUNCTION_DEFINITION: uppercase
 
   randomString:
     handler:  org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
@@ -37,5 +37,5 @@ functions:
           path: /v1/randomString
           method: get
     environment:
-      FUNCTION_NAME: randomString
+      SPRING_CLOUD_FUNCTION_DEFINITION: randomString
 

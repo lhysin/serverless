@@ -10,13 +10,22 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    api (
-        'com.amazonaws:aws-lambda-java-core:1.2.1',
-        'com.amazonaws:aws-lambda-java-log4j:1.0.1',
-        'com.fasterxml.jackson.core:jackson-core:2.11.0',
-        'com.fasterxml.jackson.core:jackson-databind:2.11.0',
-        'com.fasterxml.jackson.core:jackson-annotations:2.11.0'
-    )
+
+    implementation 'org.springframework.boot:spring-boot-starter-batch:2.7.6'
+
+
+    implementation('com.amazonaws:aws-lambda-java-core:1.2.2')
+
+    // https://projectlombok.org
+    compileOnly('org.projectlombok:lombok:1.18.24')
+    annotationProcessor('org.projectlombok:lombok:1.18.24')
+
+    // test only
+    testCompileOnly('org.projectlombok:lombok:1.18.24')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.24')
+
+    implementation 'com.h2database:h2:2.1.214'
+
 }
 
 // Task for building the zip file for upload
@@ -29,7 +38,7 @@ task buildZip(type: Zip) {
     // Link: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html
 
     // set the base name of the zip file
-    archiveBaseName = "aws-lambda-by-oracle"
+    archiveBaseName = rootProject.name
     from compileJava
     from processResources
     into('lib') {

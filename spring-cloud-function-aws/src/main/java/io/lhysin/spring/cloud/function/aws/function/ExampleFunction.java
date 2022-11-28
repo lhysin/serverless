@@ -1,5 +1,6 @@
 package io.lhysin.spring.cloud.function.aws.function;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.function.context.FunctionRegistration;
 import org.springframework.cloud.function.context.FunctionType;
 import org.springframework.context.ApplicationContextInitializer;
@@ -14,6 +15,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 @Component
+@Slf4j
 public class ExampleFunction implements ApplicationContextInitializer<GenericApplicationContext> {
 
     /**
@@ -35,28 +37,35 @@ public class ExampleFunction implements ApplicationContextInitializer<GenericApp
      */
     @Override
     public void initialize(GenericApplicationContext context) {
-        context.registerBean("consumer", FunctionRegistration.class,
-                () -> new FunctionRegistration<>(consumer())
-                        .type(FunctionType.of(String.class)));
-
-        context.registerBean("uppercase", FunctionRegistration.class,
-                () -> new FunctionRegistration<>(uppercase())
-                        .type(FunctionType.from(String.class).to(String.class)));
-
-        context.registerBean("randomString", FunctionRegistration.class,
-                () -> new FunctionRegistration<>(randomString())
-                        .type(FunctionType.from(String.class)));
+        log.debug("ApplicationContextInitializer !!!");
+//        context.registerBean("consumer", FunctionRegistration.class,
+//                () -> new FunctionRegistration<>(consumer())
+//                        .type(FunctionType.of(String.class)));
+//
+//        context.registerBean("uppercase", FunctionRegistration.class,
+//                () -> new FunctionRegistration<>(uppercase())
+//                        .type(FunctionType.from(String.class).to(String.class)));
+//
+//        context.registerBean("randomString", FunctionRegistration.class,
+//                () -> new FunctionRegistration<>(randomString())
+//                        .type(FunctionType.from(String.class)));
     }
 
+    @Bean
     public Consumer<String> consumer() {
+        log.debug("consumer INIT!!!!!!!!");
         return str -> {};
     }
 
+    @Bean
     public Function<String, String> uppercase() {
+        log.debug("uppercase INIT!!!!!!!!");
         return str -> str.toUpperCase();
     }
 
+    @Bean
     public Supplier<String> randomString() {
+        log.debug("randomString INIT!!!!!!!!");
         return () -> "SUCESS RESPONSE : " + UUID.randomUUID().toString();
     }
 
