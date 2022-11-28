@@ -24,7 +24,9 @@ provider:
   name: aws
   runtime: java8
   stage: dev
-  #region: ap-northeast-2
+  # 15m
+  timeout: 900
+  region: ap-northeast-2
 
 
 # you can add packaging information here
@@ -34,3 +36,11 @@ package:
 functions:
   oracle-health-checker:
     handler: io.lhysin.aws.lambda.handler.OracleHealthCheckHandler
+    events:
+      - schedule:
+          name: every_one_hour
+          description: every 1 hour
+          # Can also be an array of rate/cron expressions
+          rate: rate(1 hour)
+  another:
+    handler: io.lhysin.aws.lambda.handler.AnotherHandler
